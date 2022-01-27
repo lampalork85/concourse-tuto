@@ -1,0 +1,12 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: java
+inputs:
+  - name: test
+run:
+  path: /bin/sh
+  args: ["test/build.sh"]
