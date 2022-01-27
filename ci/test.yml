@@ -9,4 +9,4 @@ inputs:
   - name: booklit
 run:
   path: /bin/sh
-  args: ["booklit/build.sh"]
+  args: ["booklit/hello.sh"]
