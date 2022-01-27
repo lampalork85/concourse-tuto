@@ -6,7 +6,7 @@ image_resource:
   source:
     repository: alpine
 inputs:
-  - name: test
+  - name: booklit
 run:
   path: /bin/sh
-  args: ["test/build.sh"]
+  args: ["booklit/build.sh"]

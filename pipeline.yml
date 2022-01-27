@@ -9,4 +9,6 @@ jobs:
   - get: booklit
     trigger: true
   - task: test
+    input_mapping:
+      booklit: booklit
     file: booklit/ci/test.yml
