@@ -12,3 +12,21 @@ jobs:
     input_mapping:
       booklit: booklit
     file: booklit/ci/test.yml
+- name: unit2
+  plan:
+  - get: booklit
+    passed: [unit]
+    trigger: true
+  - task: test
+    input_mapping:
+      booklit: booklit
+    file: booklit/ci/test.yml
+- name: unit3
+  plan:
+  - get: booklit
+    passed: [unit2]
+    trigger: true
+  - task: test
+    input_mapping:
+      booklit: booklit
+    file: booklit/ci/test.yml
