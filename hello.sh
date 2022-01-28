@@ -1,4 +1,4 @@
 #!/bin/bash
 
-echo Hello 9
-exit 1
+echo Hello 10
+exit 0
