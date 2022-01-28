@@ -1,3 +1,4 @@
 #!/bin/bash
 
-echo Hello 8
+echo Hello 9
+exit 1
