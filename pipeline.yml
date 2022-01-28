@@ -16,7 +16,7 @@ jobs:
   plan:
   - get: booklit
     passed: [unit]
-    trigger: true
+    #trigger: true
   - task: test
     input_mapping:
       booklit: booklit
@@ -25,7 +25,7 @@ jobs:
   plan:
   - get: booklit
     passed: [unit2]
-    trigger: true
+    #trigger: true
   - task: test
     input_mapping:
       booklit: booklit
