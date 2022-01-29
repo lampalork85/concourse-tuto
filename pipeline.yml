@@ -1,4 +1,13 @@
 resources:
+- name: version
+  type: semver
+  source:
+    driver: git
+    uri: git@github.com:lampalork85/concourse-tuto.git
+    branch: main
+    file: version.txt
+    private_key: {{deploy_key_pair}}
+
 - name: booklit
   type: git
   source: {uri: "https://github.com/lampalork85/concourse-tuto"}
@@ -8,10 +17,14 @@ jobs:
   plan:
   - get: booklit
     trigger: true
+  - get: version
+    params: {bump: minor}
   - task: test
     input_mapping:
       booklit: booklit
     file: booklit/ci/test.yml
+  - put: version
+    params: {file: version.txt}
 - name: unit2
   plan:
   - get: booklit
